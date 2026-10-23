@@ -40,4 +40,4 @@ n =  6 | p_n = 13     | p_n# = 30030                    | q = 30059             
 
 If you use this code or data in your research, please cite:
 
-Juan Camilo Hernández-Torres (2026). “On a Primorial-Based Sequence and Its Prime-Generating Properties up to n = 1000”. Zenodo. [doi:10.5281/zenodo.23584250](https://doi.org/10.5281/zenodo.23584250).
+Juan Camilo Hernández-Torres (2026). “On a Primorial-Based Sequence and Its Prime-Generating Properties up to n = 1000”. Zenodo. [doi:10.5281/zenodo.23583908](https://doi.org/10.5281/zenodo.23583908).
