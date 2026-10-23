@@ -1,6 +1,6 @@
 # On a Primorial-Based Sequence and Its Prime-Generating Properties
 
-This repository contains the experimental script used to perform the computational evaluation described in the research note "*On a Primorial-Based Sequence and Its Prime-Generating Properties up to n = 1000*" [TBD]).
+This repository contains the experimental script used to perform the computational evaluation described in the research note "*On a Primorial-Based Sequence and Its Prime-Generating Properties up to n = 1000*" [doi:10.5281/zenodo.23584250](https://doi.org/10.5281/zenodo.23584250).
 
 The implementation is designed for deterministic exploration in number theory, leveraging high-precision arithmetic to handle large-scale primorial growth and gap analysis.
 
@@ -40,4 +40,4 @@ n =  6 | p_n = 13     | p_n# = 30030                    | q = 30059             
 
 If you use this code or data in your research, please cite:
 
-Juan Camilo Hernández-Torres (2026). “On a Primorial-Based Sequence and Its Prime-Generating Properties up to n = 1000”. Zenodo. [TBD].
+Juan Camilo Hernández-Torres (2026). “On a Primorial-Based Sequence and Its Prime-Generating Properties up to n = 1000”. Zenodo. [doi:10.5281/zenodo.23584250](https://doi.org/10.5281/zenodo.23584250).
