@@ -26,6 +26,11 @@ Run the script directly using Python:
 
 python research_primorials.py
 
+> [!NOTE]
+> **Precomputed Results Notice:** Running the script to generate results for the range **n = 1 to 1000** takes approximately **5 hours** of compute time on consumer hardware and produces an output file (`results.txt`). 
+> 
+> If you prefer to inspect or analyze the data directly without re-running the full computation, the precomputed file is available for download on Zenodo:
+> [Download Precomputed Results (results.txt) on Zenodo](https://doi.org/10.5281/zenodo.23583908)
 #### Parameters
 
 * `max_n`: Sets the upper bound for the primorial index n (default is `15`, scalable up to `1000`).
