@@ -12,7 +12,7 @@ The implementation is designed for deterministic exploration in number theory, l
 
 Install dependencies with:
 
-pip install gmpy2 sympy
+pip install gmpy2==2.2.2 sympy==1.13.1
 
 ## Script Overview
 
