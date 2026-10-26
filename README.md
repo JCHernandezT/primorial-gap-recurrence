@@ -1,6 +1,6 @@
 # On a Primorial-Based Sequence and Its Prime-Generating Properties
 
-This repository contains the experimental script used to perform the computational evaluation described in the research note "*On a Primorial-Based Sequence and Its Prime-Generating Properties up to n = 1000*" [doi:10.5281/zenodo.23584249](https://doi.org/10.5281/zenodo.23584249).
+This repository contains the experimental script used to perform the computational evaluation described in the research note "*On a Primorial-Based Sequence and Its Primality Properties up to n = 1000*" [doi:10.5281/zenodo.23584249](https://doi.org/10.5281/zenodo.23584249).
 
 The implementation is designed for deterministic exploration in number theory, leveraging high-precision arithmetic to handle large-scale primorial growth and gap analysis.
 
