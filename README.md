@@ -25,7 +25,7 @@ Performs the sequential generation of primorial numbers ($P_n = p_n\#$), locates
 
 #### Key Features
 - **Incremental Resuming:** Automatically queries the database for the last computed index $n$ and resumes execution seamlessly without recalculating previous terms.
-- **Real-Time Persistence:** Performs an immediate database `commit` on each iteration, ensuring data safety against power outages or interruptions and enabling live inspection.
+- **Real-Time Persistence:** Performs an immediate database `commit` on each iteration, ensuring data safety against interruptions and enabling live inspection.
 - **Optimized Performance:** Filters primality with `gmpy2` before invoking factorization to handle thousands of digits efficiently.
 
 #### Usage
@@ -63,4 +63,4 @@ python research_primorials.py
 
 If you use this code or data in your research, please cite:
 
-Juan Camilo Hernández-Torres (2026). “On a Primorial-Based Sequence and Its Prime-Generating Properties up to n = 1000”. Zenodo. [doi:10.5281/zenodo.23583908](https://doi.org/10.5281/zenodo.23583908).
+Juan Camilo Hernández-Torres (2026). “On a Primorial-Based Sequence and Its Prime-Generating Properties”. Zenodo. [doi:10.5281/zenodo.23583908](https://doi.org/10.5281/zenodo.23583908).
