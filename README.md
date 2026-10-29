@@ -21,7 +21,7 @@ pip install gmpy2==2.2.2 sympy==1.13.1
 
 ### `research_primorials.py`
 
-Performs the sequential generation of primorial numbers ($P_n = p_n\#$), locates the first and second consecutive primes ($q_1$ and $q_2$), computes the displacement $r_n = q_2 - P_n$, verifies its primality deterministically, factorizes the resulting term if composite, and exports everything into a local SQLite database (`primorial_research.db`) in real time.
+Performs the sequential generation of primorial numbers ($P_n = p_n\sharp$), locates the first and second consecutive primes ($q_1$ and $q_2$), computes the displacement $r_n = q_2 - P_n$, verifies its primality deterministically, factorizes the resulting term if composite, and exports everything into a local SQLite database (`primorial_research.db`) in real time.
 
 #### Key Features
 - **Incremental Resuming:** Automatically queries the database for the last computed index $n$ and resumes execution seamlessly without recalculating previous terms.
@@ -52,10 +52,10 @@ python research_primorials.py
 | :--- | :--- | :--- |
 | `n` | INTEGER | Index of the primorial (Primary Key) |
 | `p_n` | TEXT | The $n$-th prime number ($p_n$) |
-| `primorial` | TEXT | The primorial value $p_n\#$ |
-| `q1` | TEXT | The first prime greater than $p_n\#$ |
-| `q2` | TEXT | The second prime greater than $p_n\#$ |
-| `r` | TEXT | The displacement $r = q_2 - p_n\#$ |
+| `primorial` | TEXT | The primorial value $p_n\sharp$ |
+| `q1` | TEXT | The first prime greater than $p_n\sharp$ |
+| `q2` | TEXT | The second prime greater than $p_n\sharp$ |
+| `r` | TEXT | The displacement $r = q_2 - p_n\sharp$ |
 | `is_r_prime` | INTEGER | Indicator flag (1 if $r$ is prime, 0 if composite) |
 | `factor_r` | TEXT | Prime factorization string of $r$ |
 
