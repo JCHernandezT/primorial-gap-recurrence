@@ -33,7 +33,7 @@ def get_last_state():
     conn.close()
     
     if row:
-        # Retorna n, p_n exacto y el primorial exacto almacenado
+        # Returns n, exact p_n and the exact stored primorial
         return row[0], gmpy2.mpz(row[1]), gmpy2.mpz(row[2])
     return 0, None, None
 
@@ -109,7 +109,7 @@ if __name__ == "__main__":
     start_time = time.perf_counter()
 
     # Run the calculation on any range (can be increased progressively).
-    research_primorials(target_max_n=25)
+    research_primorials(target_max_n=1000)
 
     end_time = time.perf_counter()
     elapsed_time = end_time - start_time
