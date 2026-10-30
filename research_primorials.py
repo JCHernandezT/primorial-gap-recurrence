@@ -33,45 +33,42 @@ def get_last_state():
     conn.close()
     
     if row:
-        return row[0], gmpy2.mpz(row[1]), gmpy2.mpz(2) if row[0] == 1 else gmpy2.mpz(row[2])
-    return 0, gmpy2.mpz(1), gmpy2.mpz(1)
+        # Retorna n, p_n exacto y el primorial exacto almacenado
+        return row[0], gmpy2.mpz(row[1]), gmpy2.mpz(row[2])
+    return 0, None, None
 
-def research_primorials(target_max_n=15):
+def research_primorials(target_max_n=1000):
     """
     Calculates or resumes primorial research, saving directly into SQLite in real-time.
     """
     init_db()
-    last_n, p, primorial = get_last_state()
+    last_n, last_p, last_primorial = get_last_state()
     
     if last_n >= target_max_n:
         print(f"The database already contains data up to n = {last_n}. Nothing to calculate for target_max_n = {target_max_n}.")
         return
 
-    print(f"Resuming/Starting calculation from n = {last_n + 1} up to {target_max_n}...\n")
-    
-    # Open connection once for the entire session to ensure real-time commits
     conn = sqlite3.connect(DB_NAME)
     cursor = conn.cursor()
     
     if last_n == 0:
+        n_start = 1
         p = gmpy2.mpz(2)
         primorial = gmpy2.mpz(1)
-        start_range = 1
     else:
-        start_range = last_n + 1
-        for _ in range(1, start_range):
-            p = gmpy2.next_prime(p)
+        n_start = last_n + 1
+        p = last_p
+        primorial = last_primorial
+
+    print(f"Resuming/Starting calculation from n = {n_start} up to {target_max_n}...\n")
 
     try:
-        for n in range(start_range, target_max_n + 1):
-            if n > 1 and last_n > 0 or n > start_range:
-                p = gmpy2.next_prime(p)
-            elif n == 1 and last_n == 0:
-                pass
-                
-            if n == 1 and primorial == 1:
-                primorial = gmpy2.mpz(2)
+        for n in range(n_start, target_max_n + 1):
+            if n == 1:
+                p = gmpy2.mpz(2)
+                primorial = p
             else:
+                p = gmpy2.next_prime(p)
                 primorial *= p
             
             q1 = gmpy2.next_prime(primorial)
@@ -98,7 +95,6 @@ def research_primorials(target_max_n=15):
             
             conn.commit()
             
-            # Monitor progress
             prime_label = "PRIME" if is_prime_r else "COMPOSITE"
             print(f"Saved & Calculated: n = {n:4d} | p_n = {p} | r is {prime_label} (Digits of r: {len(str(r))})")
 
